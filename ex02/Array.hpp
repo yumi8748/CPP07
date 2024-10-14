@@ -7,7 +7,7 @@ template<typename T>
 class Array
 {
 	private:
-		T				elements[];
+		T				*elements;
 		unsigned int	len;
 	public:
 		Array();
@@ -19,14 +19,6 @@ class Array
 		T &operator[](unsigned int index); //
 
 		unsigned int	size();
-
-		class indexoutofbounds: public std::exception //or other way?
-		{
-			public:
-				virtual const char* what() const{
-					return (std::cout << "Index is out of bounds!" << std::endl);
-				}
-		};
 };
 
 # include "Array.tpp"
